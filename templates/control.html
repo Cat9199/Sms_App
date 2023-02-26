@@ -1,0 +1,35 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+    .ddd{
+        padding: 0 0 0 45% ;        
+    }
+    .flex-container {
+        display: flex;
+      }
+</style>
+<center><BR><BR><BR><BR>
+<a class="btn btn-primary" href="/addmes" role="button" style='padding:10px 170px;'><h2>Add New Messag</h2></a></center>
+<br><br><bR>
+<center><h2>My Messages</h2></center>
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8"><div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for me in mes %}
+        <div class="col">
+          <div class="card">
+            
+            <div class="card-body">
+              <h5 class="card-title">{{ me.MessName }}</h5>
+              <p class="card-text">{{ me.MessCon }}</p>
+              <div class="card-footer">
+              <small class="text-muted"><div class='flex-container'>State : {{ me.stat }} <div class='ddd'> time :  {{ me.created_at }}</div></div></small></div>
+            </div>
+          </div>
+        </div>{% endfor %}
+    </div></div>
+    <div class="col-2"></div>
+</div>
+
+
+
+{% endblock %}
