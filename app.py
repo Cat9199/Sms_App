@@ -349,3 +349,5 @@ def handle_exception(e):
 
     # now you're handling non-HTTP exceptions only
     return render_template("500_generic.html", e=e), 500
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',port='8000')
